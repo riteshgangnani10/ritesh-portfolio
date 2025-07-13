@@ -243,10 +243,10 @@ const Portfolio: React.FC = () => {
 
             {/* Desktop Social Links */}
             <div className="hidden md:flex items-center space-x-4">
-              <a href="https://github.com/riteshgangnani10" className="text-gray-500 hover:text-gray-900 transition-colors">
+              <a href="https://github.com/riteshgangnani10" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com/in/riteshgangnani" className="text-gray-500 hover:text-gray-900 transition-colors">
+              <a href="https://linkedin.com/in/riteshgangnani" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#contact" className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-gray-800 hover:to-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -278,10 +278,10 @@ const Portfolio: React.FC = () => {
                   </a>
                 ))}
                 <div className="flex space-x-4 pt-4">
-                  <a href="https://github.com/riteshgangnani10" className="text-gray-500 hover:text-gray-900">
+                  <a href="https://github.com/riteshgangnani10" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900">
                     <Github className="w-5 h-5" />
                   </a>
-                  <a href="https://linkedin.com/in/riteshgangnani" className="text-gray-500 hover:text-gray-900">
+                  <a href="https://linkedin.com/in/riteshgangnani" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900">
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
@@ -462,7 +462,7 @@ const Portfolio: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <a href="https://www.segmind.com" className="text-gray-500 hover:text-gray-900 transition-colors">
+                      <a href="https://www.segmind.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     </div>
@@ -523,7 +523,7 @@ const Portfolio: React.FC = () => {
                         <Star className="w-4 h-4 mr-1" />
                         <span className="text-sm">1.2K+ stars</span>
                       </div>
-                      <a href="https://github.com/VoltaML" className="text-gray-500 hover:text-gray-900 transition-colors">
+                      <a href="https://github.com/VoltaML" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
                         <Github className="w-5 h-5" />
                       </a>
                     </div>
@@ -638,7 +638,7 @@ const Portfolio: React.FC = () => {
                       <h3 className="text-2xl font-bold text-gray-900 mb-3">{project.title}</h3>
                     </div>
                     {project.link !== "#" && (
-                      <a href={project.link} className="text-gray-500 hover:text-gray-900 transition-colors">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors">
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     )}
@@ -821,14 +821,6 @@ const Portfolio: React.FC = () => {
               <a 
                 href="mailto:ritesh.gangnani@gmail.com?subject=Portfolio%20Contact&body=Hi%20Ritesh,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0ABest%20regards"
                 className="group bg-white text-gray-900 border-2 border-gray-900 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 hover:text-white hover:scale-105 flex items-center shadow-lg"
-                onClick={(e) => {
-                  // Fallback for when mailto doesn't work
-                  if (!window.confirm('Open email client to send email to ritesh.gangnani@gmail.com?')) {
-                    e.preventDefault();
-                    navigator.clipboard.writeText('ritesh.gangnani@gmail.com');
-                    alert('Email address copied to clipboard: ritesh.gangnani@gmail.com');
-                  }
-                }}
               >
                 <Mail className="w-5 h-5 mr-3" />
                 Email Me
@@ -838,12 +830,16 @@ const Portfolio: React.FC = () => {
               <div className="flex space-x-4">
                 <a 
                   href="https://www.linkedin.com/in/riteshgangnani" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-14 h-14 border-2 border-gray-300 rounded-xl flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-900 transition-all duration-300"
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a 
                   href="https://github.com/riteshgangnani10" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="w-14 h-14 border-2 border-gray-300 rounded-xl flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-900 transition-all duration-300"
                 >
                   <Github className="w-6 h-6" />
@@ -896,8 +892,8 @@ const Portfolio: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="grid md:grid-cols-3 gap-6 text-gray-600">
-                <div className="flex items-center justify-center">
+              <div className="flex justify-center text-gray-600">
+                <div className="flex items-center">
                   <Zap className="w-5 h-5 mr-2" />
                   <span>Open to remote work</span>
                 </div>
@@ -916,22 +912,15 @@ const Portfolio: React.FC = () => {
               <p className="text-gray-400">Production AI Expert • Building the future of AI</p>
             </div>
             <div className="flex space-x-6">
-              <a href="https://github.com/riteshgangnani10" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/riteshgangnani10" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="https://linkedin.com/in/riteshgangnani" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/riteshgangnani" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
                 href="mailto:ritesh.gangnani@gmail.com?subject=Portfolio%20Contact" 
                 className="text-gray-400 hover:text-white transition-colors"
-                onClick={(e) => {
-                  if (!window.confirm('Open email client to send email to ritesh.gangnani@gmail.com?')) {
-                    e.preventDefault();
-                    navigator.clipboard.writeText('ritesh.gangnani@gmail.com');
-                    alert('Email address copied to clipboard: ritesh.gangnani@gmail.com');
-                  }
-                }}
                 title="Email: ritesh.gangnani@gmail.com"
               >
                 <Mail className="w-6 h-6" />
