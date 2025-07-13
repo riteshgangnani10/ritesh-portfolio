@@ -794,6 +794,55 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
+      {/* Availability Section */}
+      <section className="py-24 bg-gradient-to-br from-blue-50/20 via-gray-50 to-purple-50/20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <FadeInSection>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              Current Availability
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Ready to collaborate on your next AI project
+            </p>
+            
+            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Remote Work</h3>
+                  <p className="text-gray-600">Available for remote positions worldwide</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Briefcase className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Consulting</h3>
+                  <p className="text-gray-600">Open for AI consulting projects</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Timeline</h3>
+                  <p className="text-gray-600">Available immediately</p>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <div className="flex items-center justify-center text-gray-600">
+                  <MapPin className="w-5 h-5 mr-2" />
+                  <span>Based in New Delhi, India</span>
+                </div>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-32">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -803,7 +852,7 @@ const Portfolio: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
               Ready to transform your AI vision into production reality?<br />
-              I'm available for consulting, full-time roles, and exciting projects.
+              Let's connect and discuss your project.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6 mb-16">
@@ -856,55 +905,30 @@ const Portfolio: React.FC = () => {
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8">
-              <div className="grid md:grid-cols-2 gap-8 mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-6 text-center">Get In Touch</h3>
+              <div className="grid md:grid-cols-2 gap-8">
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-center">
-                      <Mail className="w-4 h-4 mr-2 text-gray-500" />
-                      <a 
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=ritesh.gangnani@gmail.com&su=Portfolio%20Contact"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-                      >
-                        ritesh.gangnani@gmail.com
-                      </a>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <Phone className="w-4 h-4 mr-2 text-gray-500" />
-                      <a href="tel:+917503214123" className="text-gray-600 hover:text-gray-900 transition-colors">
-                        +91-7503214123
-                      </a>
-                    </div>
+                  <div className="flex items-center justify-center mb-3">
+                    <Mail className="w-5 h-5 mr-2 text-gray-500" />
+                    <span className="text-gray-700 font-medium">Email</span>
                   </div>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=ritesh.gangnani@gmail.com&su=Portfolio%20Contact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    ritesh.gangnani@gmail.com
+                  </a>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Location</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-center">
-                      <MapPin className="w-4 h-4 mr-2 text-gray-500" />
-                      <span className="text-gray-600">New Delhi, India</span>
-                    </div>
+                  <div className="flex items-center justify-center mb-3">
+                    <Phone className="w-5 h-5 mr-2 text-gray-500" />
+                    <span className="text-gray-700 font-medium">Phone</span>
                   </div>
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 text-gray-600">
-                <div className="text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start mb-2">
-                    <Zap className="w-5 h-5 mr-2" />
-                    <span>Open to remote work</span>
-                  </div>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <Briefcase className="w-5 h-5 mr-2" />
-                    <span>Available for consultings</span>
-                  </div>
-                </div>
-                <div className="text-center md:text-right">
-                  <div className="flex items-center justify-center md:justify-end">
-                    <Calendar className="w-4 h-4 mr-2 text-gray-500" />
-                    <span className="text-gray-600">Available immediately</span>
-                  </div>
+                  <a href="tel:+917503214123" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    +91-7503214123
+                  </a>
                 </div>
               </div>
             </div>
