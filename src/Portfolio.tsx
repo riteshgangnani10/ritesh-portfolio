@@ -819,8 +819,16 @@ const Portfolio: React.FC = () => {
               </a>
 
               <a 
-                href="mailto:ritesh.gangnani@gmail.com"
+                href="mailto:ritesh.gangnani@gmail.com?subject=Portfolio%20Contact&body=Hi%20Ritesh,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0ABest%20regards"
                 className="group bg-white text-gray-900 border-2 border-gray-900 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:bg-gray-900 hover:text-white hover:scale-105 flex items-center shadow-lg"
+                onClick={(e) => {
+                  // Fallback for when mailto doesn't work
+                  if (!window.confirm('Open email client to send email to ritesh.gangnani@gmail.com?')) {
+                    e.preventDefault();
+                    navigator.clipboard.writeText('ritesh.gangnani@gmail.com');
+                    alert('Email address copied to clipboard: ritesh.gangnani@gmail.com');
+                  }
+                }}
               >
                 <Mail className="w-5 h-5 mr-3" />
                 Email Me
@@ -850,15 +858,45 @@ const Portfolio: React.FC = () => {
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8">
+              <div className="grid md:grid-cols-2 gap-8 mb-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-center">
+                      <Mail className="w-4 h-4 mr-2 text-gray-500" />
+                      <button 
+                        onClick={() => {
+                          navigator.clipboard.writeText('ritesh.gangnani@gmail.com');
+                          alert('Email copied to clipboard!');
+                        }}
+                        className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                      >
+                        ritesh.gangnani@gmail.com
+                      </button>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <Phone className="w-4 h-4 mr-2 text-gray-500" />
+                      <a href="tel:+917503214123" className="text-gray-600 hover:text-gray-900 transition-colors">
+                        +91-7503214123
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Location & Availability</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-center">
+                      <MapPin className="w-4 h-4 mr-2 text-gray-500" />
+                      <span className="text-gray-600">New Delhi, India</span>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <Calendar className="w-4 h-4 mr-2 text-gray-500" />
+                      <span className="text-gray-600">Available immediately</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="grid md:grid-cols-3 gap-6 text-gray-600">
-                <div className="flex items-center justify-center">
-                  <MapPin className="w-5 h-5 mr-2" />
-                  <span>New Delhi, India</span>
-                </div>
-                <div className="flex items-center justify-center">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  <span>Available immediately</span>
-                </div>
                 <div className="flex items-center justify-center">
                   <Zap className="w-5 h-5 mr-2" />
                   <span>Open to remote work</span>
@@ -884,7 +922,18 @@ const Portfolio: React.FC = () => {
               <a href="https://linkedin.com/in/riteshgangnani" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="mailto:ritesh.gangnani@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="mailto:ritesh.gangnani@gmail.com?subject=Portfolio%20Contact" 
+                className="text-gray-400 hover:text-white transition-colors"
+                onClick={(e) => {
+                  if (!window.confirm('Open email client to send email to ritesh.gangnani@gmail.com?')) {
+                    e.preventDefault();
+                    navigator.clipboard.writeText('ritesh.gangnani@gmail.com');
+                    alert('Email address copied to clipboard: ritesh.gangnani@gmail.com');
+                  }
+                }}
+                title="Email: ritesh.gangnani@gmail.com"
+              >
                 <Mail className="w-6 h-6" />
               </a>
             </div>
